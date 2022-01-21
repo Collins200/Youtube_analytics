@@ -1,0 +1,37 @@
+.navbar {
+  background: #1e2c44 !important;
+}
+
+.navbar .logo-brand {
+  font-size: 2rem;
+}
+
+.navbar a {
+  color: #fff;
+}
+
+.navbar a:hover {
+  color: #afb3b3;
+}
+
+.navbar .fa-youtube {
+  color: red;
+}
+
+.navbar .fa-youtube:hover {
+  -webkit-transition: 0.3 ease-in-out;
+  transition: 0.3 ease-in-out;
+}
+
+.navbar .logo-text {
+  font-size: 3rem;
+}
+
+.navbar .navbar-toggler-icon, .navbar .navbar-toggler {
+  background-color: transparent;
+}
+
+.navbar .fa-ellipsis-h {
+  color: turquoise;
+}
+/*# sourceMappingURL=main.css.map */

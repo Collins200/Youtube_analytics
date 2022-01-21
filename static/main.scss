@@ -1,0 +1,40 @@
+// color variable
+
+
+
+.navbar{
+
+    background: #1e2c44!important;
+
+    .logo-brand{
+        font-size: 2rem;
+        
+    }
+    
+    a{
+        color: #fff;
+        &:hover{
+            color: rgb(175, 179, 179);
+        }
+    }
+
+    .fa-youtube{
+        color: red;
+        &:hover{
+            transition: 0.3 ease-in-out;
+        }
+       
+    }
+
+    .logo-text{
+        font-size: 3rem;
+    }
+
+    .navbar-toggler-icon,.navbar-toggler{
+        background-color: transparent
+    }
+    .fa-ellipsis-h{
+        color: turquoise;
+    }
+
+}
