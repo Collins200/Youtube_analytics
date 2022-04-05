@@ -35,3 +35,9 @@
   color: turquoise;
 }
 /*# sourceMappingURL=main.css.map */
+div.geodata img.geo{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+}

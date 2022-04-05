@@ -7,206 +7,204 @@
         <div class="row mt-4">
         <div class="col-md-8">
             <div class="anaytic mt-4">
-                <h6 class="text-muted"> <i class="fas fa-chevron-left"></i> Your number Ones Content Anaytics</h6>
+
+              <h6 class="text-muted"> <i class="fas fa-chevron-left"></i> Your number One Content Anaytics</h6>
             </div>
             <div class="content">
                 <h1>YouTube Keyword Tool</h1>
-               
-
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad odit eum atque excepturi debitis nam eius commodi officia esse adipisci!</p>
-                 <!-- tags -->
-                 <p><span class="badge badge-success">Music</span> <span class="badge badge-info">Entertainment</span> <span class="badge badge-success">Music</span>  <span class="badge badge-success">Education</span> <span class="badge badge-success">politics</span> </p>
+                                 <!-- tags -->
+                 <!-- <p><span class="badge badge-success">Music</span> <span class="badge badge-info">Entertainment</span> <span class="badge badge-success">Music</span>  <span class="badge badge-success">Education</span> <span class="badge badge-success">Politics</span> <span class="badge badge-info">Technology</span></p> -->
+                 <p>
+                   Topics people search on are mostly in the following categories ><br>
+                  <span class="badge badge-primary">Finance</span>
+                  <span class="badge badge-secondary">Computer&Electronics</span>
+                  <span class="badge badge-success">Business&Industrial</span>
+                  <span class="badge badge-danger">Arts&Entertainment</span>
+                  <span class="badge badge-warning">Autos&Vehicles</span>
+                  <span class="badge badge-info">Beauty&Fitness</span>
+                  <span class="badge badge-light">Books&Literature</span>
+                  <span class="badge badge-dark">Foods&Drinks</span>
+                  <span class="badge badge-primary">Games</span>
+                  <span class="badge badge-secondary">Health</span>
+                  <span class="badge badge-success">Hobbies&Leisure</span>
+                  <span class="badge badge-danger">Home&Garden</span>
+                  <span class="badge badge-warning">Internet&Telecom</span>
+                  <span class="badge badge-info">Pets&Animals</span>
+                  <span class="badge badge-light">People&Society</span>
+                  <span class="badge badge-dark">Online Communities</span>
+                  <span class="badge badge-primary">News</span>
+                  <span class="badge badge-secondary">Law&Government</span>
+                  <span class="badge badge-success">Jobs&Education</span>
+                  <span class="badge badge-danger">Real Estate</span>
+                  <span class="badge badge-warning">Science</span>
+                  <span class="badge badge-info">Shopping</span>
+                  <span class="badge badge-light">Sports</span>
+                  <span class="badge badge-dark">Travel</span>
+                 </p>
                 <div class="col">
                     <form class="form-inline  ">
-                        <input class="form-control mr-sm-4 col-md-4" type="search" placeholder="Enter a Keyword to Search" aria-label="Search">
-                        <select id="inputState" class="form-control mr-sm-4 m4-2">
-                            <option selected>Country <i class="fas fa-sort-down"></i></option>
-                            <option>Africa</option>
-                            <option>Australia</option>
-                            <option>Antarctica</option>
-                            <option>Europe</option>
-                            <option>North America</option>
-                            <option>South America</option>
+                        <input class="form-control mr-sm-4 col-md-4" type="search" placeholder="Enter a Keyword to Search" aria-label="Search" name='searchword'>
+                        <select id="inputState" name="inputState" class="form-control mr-sm-4 m4-2" onChange="update()">
+                            {% for onecountry in al %}
+                            <option value= "{{onecountry}}" SELECTED>{{ onecountry }}</option>"
+                            {% endfor %}
+                          </select>
+                          <select id="period" name="period" class="form-control mr-sm-4 m4-2" onchange="change()">
+                            {% for oneperiod in period %}
+                            <option value= "{{oneperiod}}" SELECTED>{{ oneperiod }}</option>"
+                            {% endfor %}
                           </select>
                         <button class="btn btn-outline-success my-2 col-md-4 my-sm-0" type="submit">Search <i class="fas fa-search"></i></button>
+                        <script type="text/javascript">
+                          function update() {
+                              var select = document.getElementById('inputState');
+                              var option = select.options[select.selectedIndex];
+              
+                              document.getElementById('text').value = option.text;
+                          }
+              
+                          update();
+                          function change() {
+                              var select = document.getElementById('period');
+                              var option = select.options[select.selectedIndex];
+              
+                              document.getElementById('text').value = option.text;
+                          }
+              
+                          change();
+                      </script>
                       </form>
                 </div>
             </div>
            
-            
+
         </div>
     </div>
     </div>
 </div>
 
-<!-- results -->
-
-<div class="results">
-    <div class="container">
-        <div class="row mt-4">
-            <h4>Keyword Ideas to Create Content</h4>
-
-
-         
-            
-            <div class="col-md-12">
-              <p class="text-muted mt-4">Search resault out of 10000</p>
-                <!-- table -->
-                <table class="table ">
-                    <thead>
-                      <tr>
-                        <td scope="col">Keyword</td>
-                        <td scope="col">Volume</td>
-                        
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                       
-                        <td>Mark</td>
-                        <td>5.7M</td>
-                       
-                      </tr>
-                      <tr>
-                       
-                        <td>Mark</td>
-                        <td>5.7M</td>
-                       
-                      </tr>
-                      <tr>
-                       
-                        <td>Mark</td>
-                        <td>5.7M</td>
-                       
-                      </tr>
-                      <tr>
-                       
-                        <td>Mark</td>
-                        <td>5.7M</td>
-                       
-                      </tr>
-                      <tr>
-                       
-                        <td>Mark</td>
-                        <td>5.7M</td>
-                       
-                      </tr>
-                      <tr>
-                       
-                        <td>Mark</td>
-                        <td>5.7M</td>
-                       
-                      </tr>
-                      <tr>
-                       
-                        <td>Mark</td>
-                        <td>5.7M</td>
-                       
-                      </tr>
-                      
-                    </tbody>
-                  </table>
-            </div>
-            
-        </div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+        {% for table in tables %}
+            {{ table|safe }}
+        {% endfor %}
+      </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+        {% for tabl in table1 %}
+            {{ tabl|safe }}
+        {% endfor %}
+      </div>
+      </div>
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-sm-6">
+      <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+        <img src={{url}} alt="Chart" height="auto" width="100%">
+      </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+        <img src={{url1}} alt="Chart1" height="auto" width="100%">
+      </div>
+      </div>
+    </div>
     </div>
 </div>
-
-<div class="graphs">
-  <div class="container">
-    <h4>Anaytics Graphs</h4>
-    <div class="row mt-4">
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Special title treatment</h5>
+    <p>The average search statistics for the keyword {{word}} is : {{one}}<br>
+      The interest for the keyword {{word}} overtime has changed by {{two}}%.<br>
+    <b>Consider this before making any decision:</b></p>
   
+    {%if four > 75 and three <= 5%}
 
-      <div class="col-md-6">
-       <div class="card">
-         <div class="card-body">
-          <canvas id="myChart" width="400" height="400"></canvas>
-         </div>
-       </div>
-      </div>
-      <div class="col-md-6">
-        <div class="card">
-          <div class="card-body">
-           <canvas id="myChart2" width="400" height="400"></canvas>
-          </div>
-        </div>
-      </div>
-    </div>
+        <p>The interest for the keyword '{{word}}' is stable overtime. </p>
+
+    {%elif four > 75 and three  > 5%}
+
+        <p>The interest for the keyword '{{word}}' is stable and increasing overtime. </p>
+
+    {%elif four > 75 and three  < -5%}
+
+        <p>The interest for the keyword '{{word}}' is stable and decreasing overtime. </p>
+
+    {%elif four > 60 and three <= 15%}
+
+        <p> The interest for the keyword '{{word}}' is relatively stable overtime. </p>
+
+    {%elif four > 60 and three  > 15%}
+
+        <p> The interest for the keyword '{{word}}' is relatively stable and increasing overtime. </p>
+
+    {%elif four > 60 and three < -15%}
+
+        <p> The interest for the keyword '{{word}}' is relatively stable and decreasing overtime. </p>
+
+    {%elif four > 20 and three  <= 15%}
+
+        <p> The interest for the keyword '{{word}}' is seasonal. </p>
+
+    {%elif four > 20 and three  > 15%}
+
+        <p> The interest for the keyword '{{word}}' is trending. </p>
+
+    {%elif four > 20 and three  < -15%}
+
+        <p>The interest for the keyword '{{word}}' is significantly decreasing. </p>
+
+    {%elif four > 5 and three  <= 15%}
+
+        <p> The interest for the keyword '{{word}}' is cyclical.</p>
+
+    {%elif four > 0 and three  > 15%}
+
+        <p> The interest for the keyword '{{word}}' is new and trending. </p>
+
+
+    {%elif four > 0 and three  < -15%}
+
+        <p>The interest for the keyword '{{word}}' is declining and not comparable to its peak.</p>
+
+    {%else%}
+
+    <p> This is something to be checked </p>
+
+    {%endif%}
+
   </div>
 </div>
-
-
-
-<script>
-
-
-const ctx = document.getElementById('myChart').getContext('2d');
-const myChart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-        datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1
-        }]
-    },
-    options: {
-        scales: {
-            y: {
-                beginAtZero: true
-            }
-        }
-    }
-});
-
-const doug = document.getElementById('myChart2').getContext('2d');
-
-const myChart2 = new Chart(doug,{
-  type:'doughnut',
-  data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-        datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
-            backgroundColor: [
-                'rgba(255, 99, 132, 0.2)',
-                'rgba(54, 162, 235, 0.2)',
-                'rgba(255, 206, 86, 0.2)',
-                'rgba(75, 192, 192, 0.2)',
-                'rgba(153, 102, 255, 0.2)',
-                'rgba(255, 159, 64, 0.2)'
-            ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1
-        }]
-    },
-
-})
-
-</script>
+ 
+<div class="geodata">
+  <!-- <h1>Geographical distribution</h1> -->
+  <img class="geo" src="{{url_for('static', filename='View.png')}}" alt="Youtube Geodata image"/>
+  
+</div>
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Special title treatment</h5>
+    <b>Conclusions basing on the map: </b>
+    <p>If your country has less number of people visiting Youtube consider creating Global content rather than local content to earn more views and subscription.</p>
+  </div>
+  <b><center>Popular Youtuber's in your country and the type of content they create: </center></b>
+    {% for d in table3 %}
+      {{ d|safe }}
+    {% endfor %}
+  
+</div>
 {% endblock %}
