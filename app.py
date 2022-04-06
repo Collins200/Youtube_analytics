@@ -49,7 +49,7 @@ def index():
     
     
    
-    keyword=['Music']
+    keyword=['Fitness']
     # extract data about keywords
     # your_input=str(input('Enter the keyword: '))
     # your_input='Computer'
@@ -58,9 +58,9 @@ def index():
     # keyword.insert(0, your_input)
     # pytrends.build_payload(keyword,timeframe= 'today 3-m',gprop = 'youtube')
 
-    pytrends.build_payload(keyword,timeframe=f'2020-02-26 {date.today()}', gprop = 'youtube', geo='US')
+    pytrends.build_payload(keyword,timeframe=f'2020-02-26 {date.today()}', gprop = 'youtube', geo='AU')
     # word=keyword.pop()
-    word='Music'
+    word='Fitness'
     
     # specify and get data
     data= pytrends.interest_over_time()
