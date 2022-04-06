@@ -8,7 +8,7 @@ from datetime import date
 import matplotlib.pyplot as plt
 import os
 # create a pytrends object.request data from Google trends
-pytrends = TrendReq(hl='en-US')
+pytrends = TrendReq(hl='en-US',requests_args={'verify':False})
 
 app = Flask(__name__)
 
