@@ -8,7 +8,8 @@ from datetime import date
 import matplotlib.pyplot as plt
 import os
 # create a pytrends object.request data from Google trends
-pytrends = TrendReq(hl='en-US',requests_args={'verify':False})
+# pytrends = TrendReq(hl='en-US',requests_args={'verify':False})
+pytrends = TrendReq(hl='en-US')
 
 app = Flask(__name__)
 
@@ -110,7 +111,10 @@ def index():
     df = pd.read_excel(target)
     df.columns=['Country','YoutuberName','ContentType']
 
-    return render_template('index.html',al=al,word=word,one=one,two=two,three=three,four=four,period=period,tables=[data.to_html(classes='data', header="true")],table1=[data1.to_html(classes='data1', header="true")],url='/static/images/plot.png',url1='/static/images/plot1.png',table3=[df.to_html(classes='data3')])
+    return render_template('index.html',al=al,word=word,one=one,two=two,three=three,
+    four=four,period=period,tables=[data.to_html(classes='data', header="true")],
+    table1=[data1.to_html(classes='data1', header="true")],url='/static/images/plot.png',
+    url1='/static/images/plot1.png',table3=[df.to_html(classes='data3')])
 
 if __name__ =='__main__':
 
