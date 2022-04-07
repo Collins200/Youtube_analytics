@@ -106,7 +106,8 @@ def index():
     three=abs(trend)
     four=mean[word]
 
-    df = pd.read_excel('/home/collins/Documents/APPLICATION/static/youtubers.xlsx')
+    target = os.path.join(app.static_folder, 'youtubers.xlsx')
+    df = pd.read_excel(target)
     df.columns=['Country','YoutuberName','ContentType']
 
     return render_template('index.html',al=al,word=word,one=one,two=two,three=three,four=four,period=period,tables=[data.to_html(classes='data', header="true")],table1=[data1.to_html(classes='data1', header="true")],url='/static/images/plot.png',url1='/static/images/plot1.png',table3=[df.to_html(classes='data3')])
