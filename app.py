@@ -111,8 +111,12 @@ def index():
     df = pd.read_excel(target)
     df.columns=['Country','YoutuberName','ContentType']
 
+    
+    # ContentType=df[df.iloc[:,0]==country].iloc[0,2]
+    # YoutuberName=df[df.iloc[:,0]==country].iloc[0,1]
+
     return render_template('index.html',al=al,word=word,one=one,two=two,three=three,
-    four=four,period=period,tables=[data.to_html(classes='data', header="true")],
+    four=four,period=period,YoutuberName=1,ContentType=0,tables=[data.to_html(classes='data', header="true")],
     table1=[data1.to_html(classes='data1', header="true")],url='/static/images/plot.png',
     url1='/static/images/plot1.png',table3=[df.to_html(classes='data3')])
 
