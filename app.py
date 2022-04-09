@@ -35,10 +35,12 @@ def index():
     for a in timeframes:
         d=(a['text'])
         period.append(d)
+        
     if request.method=='POST':        
         searchword = request.form.get("searchword")
         searchword=searchword.capitalize()
         searchword=searchword.replace(" ","%20")
+
         country= request.form.get("inputState")
         x=[item for item in results if item["text"] == country][0]
         codes = x["key"]
@@ -49,7 +51,7 @@ def index():
 
     
     
-   
+    # states=state.pop()
     keyword=['Fitness']
     # extract data about keywords
     # your_input=str(input('Enter the keyword: '))
@@ -107,16 +109,16 @@ def index():
     three=abs(trend)
     four=mean[word]
 
-    target = os.path.join(app.static_folder, 'youtubers.xlsx')
-    df = pd.read_excel(target)
+    target = os.path.join(app.static_folder, 'youtubers.csv')
+    df = pd.read_csv(target)
     df.columns=['Country','YoutuberName','ContentType']
 
     
-    # ContentType=df[df.iloc[:,0]==country].iloc[0,2]
-    # YoutuberName=df[df.iloc[:,0]==country].iloc[0,1]
+    ContentType=df[df.iloc[:,0]=='Zimbabwe'].iloc[0,2]
+    YoutuberName=df[df.iloc[:,0]=='Zimbabwe'].iloc[0,1]
 
-    return render_template('index.html',al=al,word=word,one=one,two=two,three=three,
-    four=four,period=period,YoutuberName=1,ContentType=0,tables=[data.to_html(classes='data', header="true")],
+    return render_template('index.html',al=al,word=word,one=one,two=two,three=three,Country=[],
+    four=four,period=period,YoutuberName=YoutuberName,ContentType=ContentType,tables=[data.to_html(classes='data', header="true")],
     table1=[data1.to_html(classes='data1', header="true")],url='/static/images/plot.png',
     url1='/static/images/plot1.png',table3=[df.to_html(classes='data3')])
 
