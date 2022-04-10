@@ -189,7 +189,32 @@
 
   </div>
 </div>
- 
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Top related searches to the keyword you have provided rated as a percentage</h5>
+          {% for table in top_related_queries %}
+             {{ table|safe }}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Rising related searches to the keyword you have provided</h5>
+
+          {% for tabl in rising_related_queries %}
+              {{ tabl|safe }}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 <div class="geodata">
   <!-- <h1>Geographical distribution</h1> -->
   <img class="geo" src="{{url_for('static', filename='View.png')}}" alt="Youtube Geodata image"/>
@@ -211,6 +236,7 @@
   <div class="card-body">
     <h5 class="card-title">Special title treatment</h5>
     <b>Conclusions basing on the table: </b>
+    <b>{{pn}}</b>
     <p>Your country "{{Country}}" has the most popular youtuber "{{YoutuberName}}" creating "{{ContentType}}". You can as well create "{{ContentType}}" type of content</p>
   </div>
 </div>

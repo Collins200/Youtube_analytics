@@ -3,6 +3,7 @@ async-generator==1.10
 attrs==21.4.0
 backcall==0.2.0
 beautifulsoup4==4.10.0
+branca==0.4.2
 certifi==2021.10.8
 cffi==1.15.0
 charset-normalizer==2.0.12
@@ -19,6 +20,7 @@ et-xmlfile==1.1.0
 executing==0.8.3
 Fiona==1.8.21
 Flask==2.0.2
+folium==0.12.1.post1
 fonttools==4.31.2
 geopandas==0.10.2
 gunicorn==20.1.0
@@ -71,6 +73,8 @@ pytz==2022.1
 pyzmq==22.3.0
 repoze.lru==0.7
 requests==2.27.1
+scipy==1.8.0
+seaborn==0.11.2
 selenium==4.1.0
 Shapely==1.8.1.post1
 six==1.16.0
