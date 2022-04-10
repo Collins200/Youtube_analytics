@@ -2,6 +2,8 @@
 
 
 {% block content %}
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
 <div class="hero">
     <div class="container">
         <div class="row mt-4">
@@ -88,17 +90,18 @@
     <div class="col-sm-6">
       <div class="card">
       <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
+        <b>Tabular analysis of your defined keywordword expressed as a percentage</b>
         {% for table in tables %}
             {{ table|safe }}
         {% endfor %}
+    
       </div>
       </div>
     </div>
     <div class="col-sm-6">
       <div class="card">
       <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
+        <b>Comparison tabular analysis of your defined keyword in other countries expressed as a percentage</b>
         {% for tabl in table1 %}
             {{ tabl|safe }}
         {% endfor %}
@@ -110,7 +113,7 @@
     <div class="col-sm-6">
       <div class="card">
       <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
+        <!-- <h5 class="card-title">Special title treatment</h5> -->
         <img src={{url}} alt="Chart" height="auto" width="100%">
       </div>
       </div>
@@ -118,7 +121,7 @@
     <div class="col-sm-6">
       <div class="card">
       <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
+        <!-- <h5 class="card-title">Special title treatment</h5> -->
         <img src={{url1}} alt="Chart1" height="auto" width="100%">
       </div>
       </div>
@@ -127,7 +130,7 @@
 </div>
 <div class="card">
   <div class="card-body">
-    <h5 class="card-title">Special title treatment</h5>
+    <h5 class="card-title">General analysis and recommendation</h5>
     <p>The average search statistics for the keyword {{word}} is : {{one}}<br>
       The interest for the keyword {{word}} overtime has changed by {{two}}%.<br>
     <b>Consider this before making any decision:</b></p>
@@ -174,7 +177,7 @@
 
     {%elif four > 0 and three  > 15%}
 
-        <p> The interest for the keyword '{{word}}' is new and trending. </p>
+        <p> The interest for the keyword '{{word}}' is new and not trending. </p>
 
 
     {%elif four > 0 and three  < -15%}
@@ -196,7 +199,7 @@
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">Top related searches to the keyword you have provided rated as a percentage</h5>
-          {% for table in top_related_queries %}
+          {% for table in top_related_query %}
              {{ table|safe }}
           {% endfor %}
         </div>
@@ -207,7 +210,7 @@
         <div class="card-body">
           <h5 class="card-title">Rising related searches to the keyword you have provided</h5>
 
-          {% for tabl in rising_related_queries %}
+          {% for tabl in rising_related_query %}
               {{ tabl|safe }}
           {% endfor %}
         </div>
@@ -215,29 +218,50 @@
     </div>
   </div>
 </div>
-<div class="geodata">
-  <!-- <h1>Geographical distribution</h1> -->
-  <img class="geo" src="{{url_for('static', filename='View.png')}}" alt="Youtube Geodata image"/>
-  
-</div>
-<div class="card">
-  <div class="card-body">
-    <h5 class="card-title">Special title treatment</h5>
-    <b>Conclusions basing on the map: </b>
-    <p>If your country has less number of people visiting Youtube consider creating Global content rather than local content to earn more views and subscription.</p>
+<div class="container">
+  <div class="card">
+    <div class="card-body">
+      <div class="geodata">
+        <!-- <h1>Geographical distribution</h1> -->
+        <img class="geo" src="{{url_for('static', filename='View.png')}}" alt="Youtube Geodata image"/>
+      
+        <div class="card-body">
+          <h5 class="card-title">Conclusions basing on the map:</h5>
+          <!-- <b>Conclusions basing on the map: </b> -->
+          <p>If your country has less number of people visiting Youtube consider creating Global content rather than local content to earn more views and subscription.</p>
+        </div>
+        
+      </div>
+    </div>
   </div>
-  <b><center>Popular Youtuber's in your country and the type of content they create: </center></b>
-    {% for d in table3 %}
-      {{ d|safe }}
-    {% endfor %}
-  
 </div>
-<div class="card">
+<div class="container">
+  <div class="card mt-2">
+   
+    <b><center>Popular Youtuber's in your country and the type of content they create: </center></b>
+      {% for d in table3 %}
+        {{ d|safe }}
+      {% endfor %}
+    
+  </div>
+</div>
+<div class="card mt-2">
   <div class="card-body">
-    <h5 class="card-title">Special title treatment</h5>
+    <!-- <h5 class="card-title">Conclusions basing on the table:</h5> -->
     <b>Conclusions basing on the table: </b>
-    <b>{{pn}}</b>
-    <p>Your country "{{Country}}" has the most popular youtuber "{{YoutuberName}}" creating "{{ContentType}}". You can as well create "{{ContentType}}" type of content</p>
+    <p>Your country has the most popular youtuber "{{YoutuberName}}" creating "{{ContentType}}". You can as well create "{{ContentType}}" type of content</p>
   </div>
 </div>
+
+
+<script>
+
+$(document).ready(function() {
+    $('').DataTable( {
+        "scrollY":        "200px",
+        "scrollCollapse": true,
+        "paging":         false
+    } );
+} );
+</script>
 {% endblock %}
