@@ -35,6 +35,7 @@ class Youtubers(db.Model):
         return '<Youtuber %r>' % self.YoutuberName
 
 @app.route("/",methods=['GET', 'POST'])
+
 def index():
 
     results = []
@@ -62,24 +63,47 @@ def index():
     #     d=(a['text'])
     #     period.append(d)
     period=[(a['text']) for a in timeframes]
+ 
+    # if request.method=='POST': 
+       
+    #     searchword = request.form.get("searchword")
+    #     searchword=searchword.capitalize()
+    #     searchword=searchword.replace(" ","%20")
         
-    if request.method=='POST':        
-        searchword = request.form.get("searchword")
-        searchword=searchword.capitalize()
-        searchword=searchword.replace(" ","%20")
+    #     my_countr= request.form.get("inputState")
+    #     x=[item for item in results if item["text"] == my_countr][0]
+    #     codes = x["key"]
+    #     codes=codes.upper()
+    #     selectedtime= request.form.get("period")
+    #     y=[item for item in timeframes if item["text"] == selectedtime ][0]
+    #     timee = y["key"]
 
-        my_country= request.form.get("inputState")
-        x=[item for item in results if item["text"] == country][0]
-        codes = x["key"]
-        codes=codes.upper()
-        selectedtime= request.form.get("period")
-        y=[item for item in timeframes if item["text"] == selectedtime ][0]
-        timee = y["key"]
 
+    searchword = request.form.get("output") if request.method=='POST' else ''
+    searchword=searchword.capitalize()
+    searchword=searchword.replace(" ","%20")
+    
+    # my_countr= request.form.get("inputState") if request.method=='POST' else ''
+    # x=[item for item in results if item["text"] == my_countr][0]
+    # codes = x["key"]
+    # codes=codes.upper()
+    # selectedtime= request.form.get("period") if request.method=='POST' else ''
+    # y=[item for item in timeframes if item["text"] == selectedtime ][0]
+    # timee = y["key"]
+
+    # # test
+    # searchword=[(request.form.get("searchword")).capitalize().replace(" ","%20") if (request.method=='POST') else ""]
+    # my_country=[(request.form.get("inputState")).capitalize() if (request.method=='POST') else ""]
+    # x=[item for item in results if item["text"] == my_country][0]
+    # codes = x["key"]
+    # codes=codes.upper()
+    # selectedtime=[(request.form.get("period")) if (request.method=='POST') else ""]
+    # y=[item for item in timeframes if item["text"] == selectedtime ][0]
+    # timee = y["key"]
     
     
     # states=state.pop()
-    keyword=['Computer']
+    keyword=['job']
     # extract data about keywords
     # your_input=str(input('Enter the keyword: '))
     # your_input='Computer'
@@ -90,9 +114,9 @@ def index():
 
     # pytrends.build_payload(keyword,timeframe=f'2020-02-26 {date.today()}', gprop = 'youtube', geo='AU')
     
-    pytrends.build_payload(keyword,timeframe='today 5-y', gprop = 'youtube', geo='AU')
+    pytrends.build_payload(keyword,timeframe='today 5-y', gprop = 'youtube', geo='')
     # word=keyword.pop()
-    word='Computer'
+    word='job'
     
     # specify and get data
     data= pytrends.interest_over_time()
@@ -102,7 +126,7 @@ def index():
     # dataa=data.to_dict()
 
     plt.plot(data,label= word)
-   
+
     # add titles
     plt.suptitle("Graphical analysis of keyword searches on youtube as a percentage")
     plt.xlabel('period')
@@ -121,7 +145,7 @@ def index():
     data1.columns=[word]
     # dataa1=data1.to_dict()
 
- 
+
     
     dat2=data1.astype(float).nlargest(10, word)
     #plot bar char with Pandas
@@ -164,14 +188,19 @@ def index():
 
 
     ###NOTE!!!!Let it print "Enter a more valid word in case of error"
+    tables=[data.to_html(classes='data  table table-striped table-bordered table-hover table-condensed text-center', justify='center', header="true")]
+    table1=[data1.to_html(classes='data1 table table-striped table-bordered table-hover table-condensed text-center', justify='center', header="true")]
+    top_related_query=[top_related_queries.to_html(classes='data table table-striped table-bordered table-hover table-condensed text-center', justify='center', header="true")if( top_related_queries is not None) else "No related keyword in your country"]
+    rising_related_query=[rising_related_queries.to_html(classes='data table table-striped table-bordered table-hover table-condensed text-center', justify='center', header="true") if(rising_related_queries is not None) else "No related keyword in your country"]
+    table3=[df.to_html(classes='data3 table table-striped table-bordered table-hover table-condensed text-center', justify='center')]
 
-    return render_template('index.html',al=al,word=word,one=one,two=two,three=three,Country=[],
-    table1=[data1.to_html(classes='data1 table', header="true")],four=four,period=period,
-    YoutuberName=YoutuberName,ContentType=ContentType,tables=[data.to_html(classes='data  table', header="true")],
-    top_related_query=[top_related_queries.to_html(classes='data table', header="true")if( top_related_queries is not None) else "No related keyword in your country"],
-    rising_related_query=[rising_related_queries.to_html(classes='data table', header="true") if(rising_related_queries is not None) else "No related keyword in your country"],
-    url='/static/images/plot.png',
-    url1='/static/images/plot1.png',table3=[df.to_html(classes='data3 table')])
+
+    # return render_template('index.html')
+
+    return render_template('index.html',al=al,word=word,one=one,two=two,three=three,
+    four=four,period=period,tables=tables,table1=table1,top_related_query=top_related_query,
+    rising_related_query= rising_related_query,YoutuberName=YoutuberName,ContentType=ContentType,
+    url='/static/images/plot.png',url1='/static/images/plot1.png',table3=table3)
 
 if __name__ =='__main__':
 

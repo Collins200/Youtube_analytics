@@ -45,19 +45,19 @@
                  </p>
                 <div class="col">
                     <form class="form-inline  ">
-                        <input class="form-control mr-sm-4 col-md-4" type="search" placeholder="Enter a Keyword to Search" aria-label="Search" name='searchword'>
+                        <input class="form-control mr-sm-4 col-md-4" type="search" placeholder="Enter a Keyword to Search" aria-label="Search" name='searchword' onchange="changing()">
                         <select id="inputState" name="inputState" class="form-control mr-sm-4 m4-2" onChange="update()">
-                            {% for onecountry in al %}
-                            <option value= "{{onecountry}}" SELECTED>{{ onecountry }}</option>"
-                            {% endfor %}
-                          </select>
-                          <select id="period" name="period" class="form-control mr-sm-4 m4-2" onchange="change()">
-                            {% for oneperiod in period %}
-                            <option value= "{{oneperiod}}" SELECTED>{{ oneperiod }}</option>"
-                            {% endfor %}
-                          </select>
-                        <button class="btn btn-outline-success my-2 col-md-4 my-sm-0" type="submit">Search <i class="fas fa-search"></i></button>
-                        <script type="text/javascript">
+                          {% for onecountry in al %}
+                            <option value= "{{onecountry}}" SELECTED>{{ onecountry }}</option>
+                          {% endfor %}
+                        </select>
+                        <select id="period" name="period" class="form-control mr-sm-4 m4-2" onchange="change()">
+                          {% for oneperiod in period %}
+                              <option value= "{{oneperiod}}" SELECTED>{{ oneperiod }}</option>
+                          {% endfor %}
+                        </select>
+                        <button class="btn btn-outline-success my-2 col-md-4 my-sm-0" type="submit" onclick="changing();">Search <i class="fas fa-search"></i></button>
+                        <!-- <script type="text/javascript">
                           function update() {
                               var select = document.getElementById('inputState');
                               var option = select.options[select.selectedIndex];
@@ -74,7 +74,8 @@
                           }
               
                           change();
-                      </script>
+                      </script> -->
+                      <!-- <input type="text" id="textt" name="output"> -->
                       </form>
                 </div>
             </div>
@@ -250,11 +251,12 @@
     <!-- <h5 class="card-title">Conclusions basing on the table:</h5> -->
     <b>Conclusions basing on the table: </b>
     <p>Your country has the most popular youtuber "{{YoutuberName}}" creating "{{ContentType}}". You can as well create "{{ContentType}}" type of content</p>
+    <p>{{searchword}}</p>
   </div>
 </div>
 
 
-<script>
+<!-- <script>
 
 $(document).ready(function() {
     $('').DataTable( {
@@ -263,5 +265,31 @@ $(document).ready(function() {
         "paging":         false
     } );
 } );
+</script> -->
+<script type="text/javascript">
+  function update() {
+      var select = document.getElementById('inputState');
+      var option = select.options[select.selectedIndex];
+
+      document.getElementById('text').value = option.text;
+  }
+
+  update();
+  function change() {
+      var select = document.getElementById('period');
+      var option = select.options[select.selectedIndex];
+
+      document.getElementById('text').value = option.text;
+  }
+
+  change();
+  function changing() {
+      var select = document.getElementById('searchword');
+      var option = select.options[select.selectedIndex];
+
+      document.getElementById('textt').value = option.text;
+  }
+
+  changing();
 </script>
 {% endblock %}
