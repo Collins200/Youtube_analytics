@@ -73,7 +73,8 @@ def mainn():
             })
     searchword = request.form["searchword"]
     searchword=searchword.capitalize()
-    search=searchword.replace(" ","%20")
+    # search=searchword.replace(" ","%20")
+    search=searchword
 
     state=request.form["output"]
     x=[item for item in results if item["text"] == state][0]
@@ -102,7 +103,7 @@ def mainn():
     word=val
     geo=valll
     place=vall
-    pytrends.build_payload(keyword,timeframe='today 5-y', gprop = 'youtube', geo=geo)
+    pytrends.build_payload(keyword,timeframe='2019-03-21 2022-04-21', gprop = 'youtube', geo=geo)
 
     # specify and get data
     data= pytrends.interest_over_time()
@@ -123,7 +124,7 @@ def mainn():
     plt.savefig('static/images/plot.png')
 
     pytrend = TrendReq(hl='en-US',timeout=None,retries=4)
-    pytrend.build_payload(keyword,timeframe='today 5-y', gprop = 'youtube', geo='')
+    pytrend.build_payload(keyword,timeframe='2019-03-21 2022-04-21', gprop = 'youtube', geo='')
     # extract country-level data about the keywords
 
     data1=pytrend.interest_by_region(resolution='COUNTRY',inc_low_vol=True)

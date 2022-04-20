@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
+/* @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"); */
 
 .header1{
 margin-top: 10px;
@@ -135,12 +135,12 @@ div.geodata img.geo{
   margin-right: 50px; */
 
 }
-.comment-footer-meta{
+/* .comment-footer-meta{
   border: 2px dashed #aa55d1;
   margin-left: 50px;
   margin-right: 50px;
   margin-bottom:20px ;
-}
+} */
 .bg{
   background-color:#e3dfd5;
 
