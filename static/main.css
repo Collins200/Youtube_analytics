@@ -6,7 +6,7 @@ margin-top: 10px;
 .card{
   margin-top: 20px;
 }
-.card-body1{
+.card-body{
   max-height: 500px;
   overflow: auto;
 }

@@ -330,4 +330,4 @@ def entry_page():
     url='/static/images/plot.png',url1='/static/images/plot1.png',table3=table3)
 
 if __name__ =='__main__':
-    app.run(debug=True,port=80,host='127.0.0.1')
+    app.run(debug=True,port=5000,host='127.0.0.2')
