@@ -1,0 +1,216 @@
+name,id,data_value
+Afghanistan,AF,0
+Angola,AO,0
+Albania,AL,0
+United Arab Emirates,AE,93.4
+Argentina,AR,78.1
+Armenia,AM,0
+Australia,AU,89.3
+Austria,AT,86.1
+Azerbaijan,AZ,0
+Burundi,BI,0
+Belgium,BE,88.6
+Benin,BJ,0
+Burkina Faso,BF,0
+Bangladesh,BD,0
+Bulgaria,BG,0
+Bahrain,BH,0
+Bosnia and Herzegovina,BA,0
+Belarus,BY,0
+Belize,BZ,0
+Bolivia,BO,0
+Brazil,BR,70.6
+Brunei Darussalam,BN,0
+Bhutan,BT,0
+Botswana,BW,0
+Central African Republic,CF,0
+Canada,CA,91.9
+Switzerland,CH,92
+Chile,CL,0
+China,CN,0
+C�te d'Ivoire,CI,0
+Cameroon,CM,0
+Democratic Republic of the Congo,CD,0
+Republic of Congo,CG,0
+Colombia,CO,63.1
+Costa Rica,CR,0
+Cuba,CU,0
+Czech Republic,CZ,0
+Germany,DE,91.5
+Djibouti,DJ,0
+Denmark,DK,92
+Dominican Republic,DO,0
+Algeria,DZ,0
+Ecuador,EC,0
+Egypt,EG,53.3
+Eritrea,ER,0
+Estonia,EE,0
+Ethiopia,ET,0
+Finland,FI,0
+Fiji,FJ,0
+Gabon,GA,0
+United Kingdom,GB,92.2
+Georgia,GE,0
+Ghana,GH,0
+Guinea,GN,0
+The Gambia,GM,0
+Guinea-Bissau,GW,0
+Equatorial Guinea,GQ,0
+Greece,GR,74.6
+Greenland,GL,0
+Guatemala,GT,0
+Guyana,GY,0
+Honduras,HN,0
+Croatia,HR,0
+Haiti,HT,0
+Hungary,HU,0
+Indonesia,ID,55
+India,IN,37
+Ireland,IE,88.1
+Iran,IR,0
+Iraq,IQ,0
+Iceland,IS,0
+Israel,IL,91.3
+Italy,IT,74.9
+Jamaica,JM,0
+Jordan,JO,0
+Japan,JP,86.7
+Kazakhstan,KZ,0
+Kenya,KE,23.2
+Kyrgyzstan,KG,0
+Cambodia,KH,0
+Republic of Korea,KR,0
+Kosovo,XK,0
+Kuwait,KW,0
+Lao PDR,LA,0
+Lebanon,LB,0
+Liberia,LR,0
+Libya,LY,0
+Sri Lanka,LK,0
+Lesotho,LS,0
+Lithuania,LT,0
+Luxembourg,LU,0
+Latvia,LV,0
+Morocco,MA,66.6
+Moldova,MD,0
+Madagascar,MG,0
+Mexico,MX,68
+Macedonia,MK,0
+Mali,ML,0
+Myanmar,MM,0
+Montenegro,ME,0
+Mongolia,MN,0
+Mozambique,MZ,0
+Mauritania,MR,0
+Malawi,MW,0
+Malaysia,MY,84.1
+Namibia,0,0
+Niger,NE,0
+Nigeria,NG,26.4
+Nicaragua,NI,0
+Netherlands,NL,95
+Norway,NO,0
+Nepal,NP,0
+New Zealand,NZ,93.9
+Oman,OM,0
+Pakistan,PK,0
+Panama,PA,0
+Peru,PE,0
+Philippines,PH,61.1
+Papua New Guinea,PG,0
+Poland,PL,77
+Dem. Rep. Korea,KP,0
+Portugal,PT,73.7
+Paraguay,PY,0
+Palestine,PS,0
+Qatar,QA,0
+Romania,RO,73.9
+Russia,RU,80.2
+Rwanda,RW,0
+Western Sahara,EH,0
+Saudi Arabia,SA,90.8
+Sudan,SD,0
+South Sudan,SS,0
+Senegal,SN,0
+Sierra Leone,SL,0
+El Salvador,SV,0
+Serbia,RS,0
+Suriname,SR,0
+Slovakia,SK,0
+Slovenia,SI,0
+Sweden,SE,93.8
+Swaziland,SZ,0
+Syria,SY,0
+Chad,TD,0
+Togo,TG,0
+Thailand,TH,63.3
+Tajikistan,TJ,0
+Turkmenistan,TM,0
+Timor-Leste,TL,0
+Tunisia,TN,0
+Turkey,TR,72.9
+Taiwan,TW,87.3
+Tanzania,TZ,0
+Uganda,UG,0
+Ukraine,UA,0
+Uruguay,UY,0
+United States,US,79.4
+Uzbekistan,UZ,0
+Venezuela,VE,0
+Vietnam,VN,68.4
+Vanuatu,VU,0
+Yemen,YE,0
+South Africa,ZA,53.3
+Zambia,ZM,0
+Zimbabwe,ZW,0
+Somalia,SO,0
+France,GF,88.3
+France,FR,88.3
+Spain,ES,91.6
+Aruba,AW,0
+Anguilla,AI,0
+Andorra,AD,0
+Antigua and Barbuda,AG,0
+Bahamas,BS,0
+Bermuda,BM,0
+Barbados,BB,0
+Comoros,KM,0
+Cape Verde,CV,0
+Cayman Islands,KY,0
+Dominica,DM,0
+Falkland Islands,FK,0
+Faeroe Islands,FO,0
+Grenada,GD,0
+Hong Kong,HK,91.4
+Saint Kitts and Nevis,KN,0
+Saint Lucia,LC,0
+Liechtenstein,LI,0
+Saint Martin (French),MF,0
+Maldives,MV,0
+Malta,MT,0
+Montserrat,MS,0
+Mauritius,MU,0
+New Caledonia,NC,0
+Nauru,NR,0
+Pitcairn Islands,PN,0
+Puerto Rico,PR,0
+French Polynesia,PF,0
+Singapore,SG,88
+Solomon Islands,SB,0
+S�o Tom� and Principe,ST,0
+Saint Martin (Dutch),SX,0
+Seychelles,SC,0
+Turks and Caicos Islands,TC,0
+Tonga,TO,0
+Trinidad and Tobago,TT,0
+Saint Vincent and the Grenadines,VC,0
+British Virgin Islands,VG,0
+United States Virgin Islands,VI,0
+Cyprus,CY,0
+Reunion (France),RE,0
+Mayotte (France),YT,0
+Martinique (France),MQ,0
+Guadeloupe (France),GP,0
+Curaco (Netherlands),CW,0
+Canary Islands (Spain),IC,0
+South Korea,0,94

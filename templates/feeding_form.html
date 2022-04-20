@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youtube Keyword</title>
+       <!-- links -->
+    <!-- custom css -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- fonts -->
+    <script src="https://kit.fontawesome.com/e7a7e30115.js" crossorigin="anonymous"></script>
+    <!-- chart js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
+</head>
+<body>
+    <div class="col">
+        
+        <p>
+            <h1>YouTube Keyword Tool</h1>
+            Topics people search on are mostly in the following categories ><br>
+           <span class="badge badge-primary">Finance</span>
+           <span class="badge badge-secondary">Computer&Electronics</span>
+           <span class="badge badge-success">Business&Industrial</span>
+           <span class="badge badge-danger">Arts&Entertainment</span>
+           <span class="badge badge-warning">Autos&Vehicles</span>
+           <span class="badge badge-info">Beauty&Fitness</span>
+           <span class="badge badge-light">Books&Literature</span>
+           <span class="badge badge-dark">Foods&Drinks</span>
+           <span class="badge badge-primary">Games</span>
+           <span class="badge badge-secondary">Health</span>
+           <span class="badge badge-success">Hobbies&Leisure</span>
+           <span class="badge badge-danger">Home&Garden</span>
+           <span class="badge badge-warning">Internet&Telecom</span>
+           <span class="badge badge-info">Pets&Animals</span>
+           <span class="badge badge-light">People&Society</span>
+           <span class="badge badge-dark">Online Communities</span>
+           <span class="badge badge-primary">News</span>
+           <span class="badge badge-secondary">Law&Government</span>
+           <span class="badge badge-success">Jobs&Education</span>
+           <span class="badge badge-danger">Real Estate</span>
+           <span class="badge badge-warning">Science</span>
+           <span class="badge badge-info">Shopping</span>
+           <span class="badge badge-light">Sports</span>
+           <span class="badge badge-dark">Travel</span>
+          </p>
+          <form action="{{ url_for('mainn') }}" method="POST">
+            <div class="inputform">
+                <!-- <label for="searchword">searchword</label> -->
+                Searchword: <input type="search" value="JOKES" placeholder="Enter a Keyword to Search" aria-label="Search" name='searchword'>
+                <br>
+                <label for="Country">Choose the country you want to base your analysis:</label>
+                <select id="country" name="country" onChange="update()">
+                    {% for onecountry in al %}
+                    <option value= "{{onecountry}}" SELECTED>{{ onecountry }}</option>"
+                    {% endfor %}
+                </select>
+                <br> 
+                <input type="text" id="text" name="output">
+                <br>
+                <button type="submit">Submit</button>
+    
+          </form>
+    </div>
+    <script type="text/javascript">
+      function update() {
+          var select = document.getElementById('country');
+          var option = select.options[select.selectedIndex];
+          document.getElementById('text').style.display = 'none';
+          document.getElementById('text').value = option.text;
+
+      }
+
+      update();
+  </script>
+</body>
+</html>
