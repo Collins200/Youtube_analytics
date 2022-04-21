@@ -6,7 +6,11 @@ margin-top: 10px;
 .card{
   margin-top: 20px;
 }
+<<<<<<< HEAD
 .card-body{
+=======
+.card-body1{
+>>>>>>> a6c3e3d (myyoutuber)
   max-height: 500px;
   overflow: auto;
 }
