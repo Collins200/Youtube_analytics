@@ -3,85 +3,86 @@
     {% extends 'base.html'%}
 
 
-{% block content %}
-    <div class="container mt-4">
-
-        <h1>YouTube Keyword Tool</h1>
-
-        Topics people search on are mostly in the following categories ><br>
-        
-        <p>
+    {% block content %}
+        <div class="container mt-4">
+    
+            <h1>YouTube Keyword Tool</h1>
+    
+            Topics people search on are mostly in the following categories ><br>
             
-       
-           <span class="badge badge-primary">Finance</span>
-           <span class="badge badge-secondary">Computer&Electronics</span>
-           <span class="badge badge-success">Business&Industrial</span>
-           <span class="badge badge-danger">Arts&Entertainment</span>
-           <span class="badge badge-warning">Autos&Vehicles</span>
-           <span class="badge badge-info">Beauty&Fitness</span>
-           <span class="badge badge-light">Books&Literature</span>
-           <span class="badge badge-dark">Foods&Drinks</span>
-           <span class="badge badge-primary">Games</span>
-           <span class="badge badge-secondary">Health</span>
-           <span class="badge badge-success">Hobbies&Leisure</span>
-           <span class="badge badge-danger">Home&Garden</span>
-           <span class="badge badge-warning">Internet&Telecom</span>
-           <span class="badge badge-info">Pets&Animals</span>
-           <span class="badge badge-light">People&Society</span>
-           <span class="badge badge-dark">Online Communities</span>
-           <span class="badge badge-primary">News</span>
-           <span class="badge badge-secondary">Law&Government</span>
-           <span class="badge badge-success">Jobs&Education</span>
-           <span class="badge badge-danger">Real Estate</span>
-           <span class="badge badge-warning">Science</span>
-           <span class="badge badge-info">Shopping</span>
-           <span class="badge badge-light">Sports</span>
-           <span class="badge badge-dark">Travel</span>
-          </p>
-       
-           <div class="row">
-
-               <div class="col-md-7">
-
-                <form action="{{ url_for('mainn') }}" method="POST">
-                    <div class="inputform">
-                        <!-- <label for="searchword">searchword</label> -->
-                        Searchword: <input type="search" class="form-control" value="JOKES" placeholder="Enter a Keyword to Search" aria-label="Search" name='searchword'>
-                        <br>
-                        <label for="Country">Choose the country you want to base your analysis:</label>
-                        <select class="form-control " id="country" name="country" onChange="update()">
-                            {% for onecountry in al %}
-                            <option value= "{{onecountry}}" SELECTED>{{ onecountry }}</option>"
-                            {% endfor %}
-                        </select>
-                        <br> 
-                        <input type="text" id="text" class="col-md-3 btn btn-success" name="output">
-                        <!-- <button type="submit" id="text" name="output" >Search</button> -->
-                        <br>
-                        <button type="submit">Submit</button>
-            
-                  </form>
-
+            <p>
+                
+           
+               <span class="badge badge-primary">Finance</span>
+               <span class="badge badge-secondary">Computer&Electronics</span>
+               <span class="badge badge-success">Business&Industrial</span>
+               <span class="badge badge-danger">Arts&Entertainment</span>
+               <span class="badge badge-warning">Autos&Vehicles</span>
+               <span class="badge badge-info">Beauty&Fitness</span>
+               <span class="badge badge-light">Books&Literature</span>
+               <span class="badge badge-dark">Foods&Drinks</span>
+               <span class="badge badge-primary">Games</span>
+               <span class="badge badge-secondary">Health</span>
+               <span class="badge badge-success">Hobbies&Leisure</span>
+               <span class="badge badge-danger">Home&Garden</span>
+               <span class="badge badge-warning">Internet&Telecom</span>
+               <span class="badge badge-info">Pets&Animals</span>
+               <span class="badge badge-light">People&Society</span>
+               <span class="badge badge-dark">Online Communities</span>
+               <span class="badge badge-primary">News</span>
+               <span class="badge badge-secondary">Law&Government</span>
+               <span class="badge badge-success">Jobs&Education</span>
+               <span class="badge badge-danger">Real Estate</span>
+               <span class="badge badge-warning">Science</span>
+               <span class="badge badge-info">Shopping</span>
+               <span class="badge badge-light">Sports</span>
+               <span class="badge badge-dark">Travel</span>
+              </p>
+           
+               <div class="row">
+    
+                   <div class="col-md-7">
+    
+                    <form action="{{ url_for('mainn') }}" method="POST">
+                        <div class="inputform">
+                            <!-- <label for="searchword">searchword</label> -->
+                            Searchword: <input type="search" class="form-control" value="JOKES" placeholder="Enter a Keyword to Search" aria-label="Search" name='searchword'>
+                            <br>
+                            <label for="Country">Choose the country you want to base your analysis:</label>
+                            <select class="form-control " id="country" name="country" onChange="update()">
+                                {% for onecountry in al %}
+                                <option value= "{{onecountry}}" SELECTED>{{ onecountry }}</option>"
+                                {% endfor %}
+                            </select>
+                            <br> 
+                            <input type="text" id="text" class="col-md-3 btn btn-success" name="output">
+                            <!-- <button type="submit" id="text" name="output" >Search</button> -->
+                            <br>
+                            <button type="submit">Submit</button>
+                
+                      </form>
+    
+                   </div>
+                   <div class="col-md-5">
+    
+                        
+    
+                   </div>
+    
                </div>
-               <div class="col-md-5">
-
-                    
-
-               </div>
-
-           </div>
-       
-    </div>
-    <script type="text/javascript">
-      function update() {
-          var select = document.getElementById('country');
-          var option = select.options[select.selectedIndex];
-          document.getElementById('text').style.display = 'none';
-          document.getElementById('text').value = option.text;
-
-      }
-
-      update();
-  </script>
-
-{% endblock %}
+           
+        </div>
+        <script type="text/javascript">
+          function update() {
+              var select = document.getElementById('country');
+              var option = select.options[select.selectedIndex];
+              document.getElementById('text').style.display = 'none';
+              document.getElementById('text').value = option.text;
+    
+          }
+    
+          update();
+      </script>
+    
+    {% endblock %}
+    

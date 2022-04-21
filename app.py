@@ -73,7 +73,8 @@ def mainn():
             })
     searchword = request.form["searchword"]
     searchword=searchword.capitalize()
-    search=searchword.replace(" ","%20")
+    # search=searchword.replace(" ","%20")
+    search=searchword
 
     state=request.form["output"]
     x=[item for item in results if item["text"] == state][0]
